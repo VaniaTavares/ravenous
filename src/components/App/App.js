@@ -1,8 +1,8 @@
-import logo from '../../logo.svg';
+
 import './App.css';
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
-import Business from '../Business/Business';
+
 
 
 function App() {
