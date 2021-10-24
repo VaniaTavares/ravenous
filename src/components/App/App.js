@@ -2,6 +2,7 @@
 import './App.css';
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
+import React from 'react';
 
 const business = {
   imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
@@ -17,14 +18,21 @@ const business = {
 
 const businesses = [business, business, business, business, business, business];
 
-function App() {
+class App extends React.Component {
+
+searchYelp(term, location, sortBy) {
+console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
+  }
+
+render() {
   return (
-<div className="App">
-  <h1>ravenous</h1>
-  <SearchBar />
-  <BusinessList businesses={businesses}/>
-</div>
-  );
+    <div className="App">
+      <h1>ravenous</h1>
+      <SearchBar searchYelp={this.searchYelp}/>
+      <BusinessList businesses={businesses}/>
+    </div>
+      );
+}
 }
 
 export default App;
